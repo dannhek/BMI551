@@ -613,5 +613,5 @@ Used for "guess and check" with a Clopper-Pearson confidence interval.
 
 
 $$
-Test $$ \text{is this Latex?}
+Test && \text{is this Latex?}
 $$
