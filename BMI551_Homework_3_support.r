@@ -12,4 +12,12 @@ possible_bounds <- data.frame(
       ,`P(k=5)` = round(dbinom(5,20,probability_range),6)
 ) 
 names(possible_bounds)<-c('possible_pi','P(k=0)','P(k=1)','P(k=2)','P(k=3)','P(k=4)','P(k=5)')
+possible_bounds$`P(k<=1)` <- possible_bounds$`P(k=0)` + possible_bounds$`P(k=1)`
+possible_bounds$`P(k<=2)` <- possible_bounds$`P(k=0)` + possible_bounds$`P(k=1)` + possible_bounds$`P(k=2)`
+possible_bounds$`P(k<=3)` <- possible_bounds$`P(k=0)` + possible_bounds$`P(k=1)` + possible_bounds$`P(k=2)` 
+                              + possible_bounds$`P(k=3)` 
+possible_bounds$`P(k<=4)` <- possible_bounds$`P(k=0)` + possible_bounds$`P(k=1)` + possible_bounds$`P(k=2)` 
+                              + possible_bounds$`P(k=3)` + possible_bounds$`P(k=4)` 
+possible_bounds$`P(k<=5)` <- possible_bounds$`P(k=0)` + possible_bounds$`P(k=1)` + possible_bounds$`P(k=2)` 
+                              + possible_bounds$`P(k=3)` + possible_bounds$`P(k=4)` + possible_bounds$`P(k=5)`  
 kable(possible_bounds)
