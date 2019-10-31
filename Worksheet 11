@@ -1,0 +1,56 @@
+worksheet 11
+Problem 1
+
+Problem 2
+    a. 
+        prevalence of children at 8 who wheeze with exercise, for very low birthweight is 17/384
+        p = 0.17
+        z = ( 0.17 - 0.062 ) / sqrt( (0.062) * (1-0.062) / 384)
+    b.  
+        H0: pi = 0.062
+        HA: pi != 0.062
+        Assumptions: Central Limit Theorem Applies
+        p-value approx 0
+    c. 
+        Yes. More than 5 individuals with and without wheezing with exercise
+    
+    d. 
+        p <- 0.17
+        z <- 1.96
+        n <- 384
+
+        wilson = (p + (z^2 / 2 * n)) / (1+(z^2)/)
+
+        > binconf(.17*384,384,alpha=0.05,method='wilson')
+            PointEst    Lower     Upper
+                0.17 0.135742 0.2107951
+
+
+    e. Sign Test
+            Number of children who wheeze: 104
+            Number who don't: 280
+
+            sign test 
+                standard error = ( 104-280 ) / sqrt(104+280)
+                               = -8.98
+            Reject null hypothesis. We find that the proportion of very low birthweight children who wheeze at night is significantly different than 0.5
+    
+Problem 3.
+    a. 
+        r = above 40 ng/ml = 4
+        s = below 40 ng/ml = 3
+        sign test stat = 4-3 / sqrt(4 + 3 )
+                       = 1 / sqrt(7)
+                       z = 0.38 < 1.96
+                    We fail to reject the null hypothesis that the median concentration is 40 ng/ml
+
+    b. 
+        H0: Maternal Concentration is higher than concentration 50% of the time
+        HA: Maternal Concentration is higher than concentration MORE THAN 50% of the time
+        r = maternal concentration higher = 4
+        s = cord concentration not lower  = 3
+            z = -0.38 
+            |z| < 1.96
+            Fail to reject H0
+    c. 
+        No. These tests require the central limit theorem, and we do not have a sufficiently large n to justify that assumption. 
